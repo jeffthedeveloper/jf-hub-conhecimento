@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JF Negócios Pro - Central de Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+            --text-color: #ffffff;
+            --accordion-bg: rgba(255, 255, 255, 0.1);
+            --accordion-hover: rgba(255, 255, 255, 0.2);
+            --highlight: #00d2ff;
+            --sub-header: #ffd700;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container { width: 100%; max-width: 650px; text-align: center; }
+
+        /* Perfil */
+        .profile-section { margin-bottom: 25px; }
+        .profile-img {
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3); object-fit: cover;
+            margin-bottom: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 5px; letter-spacing: 0.5px; }
+        p.bio { font-size: 0.9rem; color: #ddd; opacity: 0.9; margin-bottom: 20px; }
+
+        /* Botão Principal */
+        .main-btn {
+            display: block;
+            background: #fff;
+            color: #0F2027;
+            padding: 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+            border: 2px solid transparent;
+        }
+        .main-btn:hover { transform: scale(1.02); border-color: var(--highlight); }
+
+        /* Acordeão */
+        .accordion {
+            background-color: var(--accordion-bg);
+            color: #fff;
+            cursor: pointer;
+            padding: 18px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .active, .accordion:hover {
+            background-color: var(--accordion-hover);
+            border-left: 5px solid var(--highlight);
+            padding-left: 15px; /* Ajuste visual */
+        }
+
+        .accordion i { width: 25px; text-align: center; margin-right: 10px; color: var(--highlight); }
+        
+        .accordion:after {
+            content: '\f078'; /* FontAwesome Chevron Down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .active:after { transform: rotate(180deg); }
+
+        /* Painel de Links */
+        .panel {
+            padding: 0 10px;
+            background-color: transparent;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-bottom: 5px;
+        }
+
+        /* Subtítulos dentro do painel (para organizar os 171 links) */
+        .sub-category {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ccc;
+            margin: 15px 0 5px 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 3px;
+        }
+
+        /* Links */
+        .link-item {
+            display: block;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 12px 15px;
+            margin: 6px 0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-align: left;
+            border-left: 4px solid #bbb;
+            transition: 0.2s;
+        }
+        
+        .link-item:hover {
+            transform: translateX(3px);
+            border-left-color: var(--highlight);
+            background: #fff;
+        }
+
+        footer { margin-top: 40px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-section">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocJpap-41ikrlXMhcOqcK38RlNY0xMrLtjHS7I_Y8geC0x2iAMmx=s432-c-no" alt="Jefferson Firmino" class="profile-img">
+        <h1>Jefferson Firmino</h1>
+        <p class="bio">Consultoria | Dados & Dev | Educação</p>
+    </div>
+
+    <a href="https://jfnegociospro.wixsite.com/consultoria/post/bem-vindo-ao-meu-blog" class="main-btn">
+        <i class="fas fa-home"></i> INÍCIO: Bem-vindo ao Blog
+    </a>
+
+    <button class="accordion"><i class="fas fa-chart-line"></i> Negócios, Finanças & Gestão</button>
+    <div class="panel">
+        <div class="sub-category">Gestão & Finanças</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/fluxo-de-caixa" class="link-item">Fluxo de Caixa</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/cash-flow-overview" class="link-item">Cash Flow Overview (Inglês)</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/reestrutura%C3%A7%C3%A3o-financeira-da-empresa-s%C3%B3-cacha%C3%A7as" class="link-item">Case: Reestruturação Só Cachaças</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/por-que-a-bombril-teve-preju%C3%ADzo-em-2018" class="link-item">Case Acadêmico: Prejuízo da Bombril (2018)</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/hedge-cambial-protegendo-se-da-varia%C3%A7%C3%A3o-cambial" class="link-item">Hedge Cambial: Proteção Cambial</a>
+        
+        <div class="sub-category">Bancário & Auditoria</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/fraude-em-transa%C3%A7%C3%B5es-banc%C3%A1rias-5-estudos-de-caso-detalhados-com-%C3%AAnfase-na-pr%C3%A1tica" class="link-item">Fraudes Bancárias: 5 Estudos de Caso</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/febraban-tudo-o-que-voc%C3%AA-precisa-saber-e-como-se-tornar-um-auditor-independente" class="link-item">FEBRABAN & Auditoria Independente</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/7-pontos-para-recuperar-a-confian%C3%A7a-do-cliente-no-cotidiano-banc%C3%A1rio" class="link-item">7 Pontos para Recuperar Confiança do Cliente</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/compras-internacionais-com-cart%C3%A3o-de-cr%C3%A9dito-guia-completo" class="link-item">Compras Internacionais com Cartão</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-recuperar-clientes-que-n%C3%A3o-conseguem-utilizar-o-sem-parar" class="link-item">Case: Recuperação Clientes Sem Parar</a>
+        
+        <div class="sub-category">Compras & Estoque</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/controle-de-estoque-simplificado-com-excel-guia-completo" class="link-item">Controle de Estoque com Excel</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/administra%C3%A7%C3%A3o-de-compras-como-gerenciar-fornecedores-de-forma-eficiente" class="link-item">Administração de Compras e Fornecedores</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/gest%C3%A3o-de-fornecedores-otimizando-relacionamentos-nos-nichos-de-mercado" class="link-item">Gestão de Fornecedores em Nichos</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-import%C3%A2ncia-do-invent%C3%A1rio-na-gest%C3%A3o-de-estoques" class="link-item">Importância do Inventário</a>
+        
+        <div class="sub-category">Empreendedorismo</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/top-5-ideias-de-renda-extra-para-brasileiros-em-2024" class="link-item">Top 5 Ideias de Renda Extra 2024</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/ganhe-dinheiro-diariamente-fazendo-pesquisas-com-o-bing-search-e-o-microsoft-rewards" class="link-item">Renda Extra com Microsoft Rewards</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-code"></i> Dev: Java, Lógica & Web</button>
+    <div class="panel">
+        <div class="sub-category">Série: Aprendendo Java</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/postagem-1-introdu%C3%A7%C3%A3o-ao-java" class="link-item">1. Introdução ao Java</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/postagem-2-compila%C3%A7%C3%A3o-e-interpreta%C3%A7%C3%A3o" class="link-item">2. Compilação e Interpretação</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/postagem-3-tipos-de-dados-e-operadores" class="link-item">3. Tipos de Dados e Operadores</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/postagem-4-entrada-e-sa%C3%ADda-de-dados-em-java-utiliza%C3%A7%C3%A3o-e-formata%C3%A7%C3%A3o" class="link-item">4. Entrada e Saída de Dados</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/postagem-5-tratamento-de-erros-com-exce%C3%A7%C3%A3o-em-java" class="link-item">5. Tratamento de Erros (Exceções)</a>
+        
+        <div class="sub-category">Fundamentos & Lógica</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/7-exerc%C3%ADcios-para-praticar-fundamentos-de-programa%C3%A7%C3%A3o" class="link-item">7 Exercícios de Fundamentos</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/exerc%C3%ADcios-de-estrutura-sequencial-em-java" class="link-item">Exercícios de Estrutura Sequencial</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/o-que-%C3%A9-uml-e-como-us%C3%A1-la-para-modelar-sistemas-orientados-a-objetos" class="link-item">O que é UML (Modelagem)</a>
+        
+        <div class="sub-category">Web & Mobile</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/desvendando-a-sem%C3%A2ntica-do-html-melhorando-a-estrutura-do-seu-conte%C3%BAdo" class="link-item">Semântica HTML</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/aprenda-a-criar-sua-pr%C3%B3pria-calculadora-javascript-um-tutorial-pr%C3%A1tico-com-intera%C3%A7%C3%A3o-ao-vivo-1" class="link-item">Tutorial: Criar Calculadora em JS</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/ides-android-qual-o-melhor-para-voc%C3%AA" class="link-item">IDEs para Android: Qual escolher?</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/%C3%A9-poss%C3%ADvel-aprender-programa%C3%A7%C3%A3o-no-celular" class="link-item">É possível programar no celular?</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-database"></i> Dados, Python & IA</button>
+    <div class="panel">
+        <div class="sub-category">Python & Dados</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/liberando-o-poder-dos-dados-com-pandas-insights-de-censos-de-esquilos-e-convers%C3%B5es-de-temperatura" class="link-item">Pandas: Insights de Dados</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/trato-feito-aprenda-a-usar-tratamento-de-exce%C3%A7%C3%B5es-em-python-para-c%C3%B3digos-mais-robustos" class="link-item">Tratamento de Exceções em Python</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-importar-favoritos-a-partir-de-arquivos-txt-usando-python" class="link-item">Automação: Importar Favoritos com Python</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/entendendo-conceitos-estat%C3%ADsticos-de-forma-simples" class="link-item">Conceitos Estatísticos Simples</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/minha-experi%C3%AAncia-com-sql" class="link-item">Minha Experiência com SQL</a>
+        
+        <div class="sub-category">Inteligência Artificial (IA)</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/intelig%C3%AAncia-artificial-na-educa%C3%A7%C3%A3o-transformando-a-forma-de-aprender" class="link-item">IA na Educação</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/o-impacto-da-intelig%C3%AAncia-artificial-na-sociedade-moderna" class="link-item">IA na Sociedade Moderna</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-inserir-tabelas-na-ia" class="link-item">Como inserir tabelas na IA</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/resumidores-de-ia-como-resumir-livros-e-apostilas-em-segundos" class="link-item">Resumidores de IA (Livros/Apostilas)</a>
+    </div>
+
+    <button class="accordion"><i class="fab fa-linux"></i> Linux, Sistemas & Ferramentas</button>
+    <div class="panel">
+        <div class="sub-category">Linux & OS</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/linux-mint-cinnamon-xfce-e-mate-qual-o-melhor-para-voc%C3%AA" class="link-item">Linux Mint: Cinnamon vs XFCE vs Mate</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/software-livre-linux-uma-alternativa-vi%C3%A1vel-e-poderosa-para-escrit%C3%B3rios" class="link-item">Linux para Escritórios</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-resetar-a-senha-de-um-usu%C3%A1rio-no-linux" class="link-item">Tutorial: Resetar Senha no Linux</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-dividir-suas-%C3%A1reas-de-trabalho-em-dois-monitores-sem-misturar-tudo-no-linux" class="link-item">Produtividade com 2 Monitores no Linux</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/windows-10-para-programadores-iniciantes-e-estudantes" class="link-item">Windows 10 para Programadores</a>
+        
+        <div class="sub-category">Ferramentas & Scripts</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/controle-de-vers%C3%A3o-com-git-um-guia-para-iniciantes" class="link-item">Git para Iniciantes</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/as-principais-fun%C3%A7%C3%B5es-do-maven" class="link-item">Funções do Maven</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/como-instalar-v%C3%A1rios-certificados-digitais-simultaneamente-usando-script-em-c" class="link-item">Script C: Instalar Certificados</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/principais-atalhos-do-eclipse-para-aumentar-a-produtividade" class="link-item">Atalhos do Eclipse</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/comparativo-entre-pycharm-e-vscode-integra%C3%A7%C3%A3o-de-keymaps-e-introdu%C3%A7%C3%A3o-%C3%A0-biblioteca-pdfplumber" class="link-item">PyCharm vs VSCode</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-gamepad"></i> Geek, Tech History & Cultura</button>
+    <div class="panel">
+        <div class="sub-category">História da Tecnologia</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/o-triunfo-dos-nerds-nos-anos-70-80-ser%C3%A1-que-teremos-algo-parecido-no-brasil" class="link-item">O Triunfo dos Nerds Anos 70/80</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/comparando-a-boa-e-velha-gambiarra-brasileira-com-a-tecnologia-americana-dos-anos-80" class="link-item">Gambiarra BR vs Tech USA Anos 80</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/blogs-de-tecnologia-no-brasil-pioneiros-e-o-futuro" class="link-item">Blogs de Tecnologia: Pioneiros</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-revolu%C3%A7%C3%A3o-tecnol%C3%B3gica-liderada-por-satya-nadella-e-sundar-pichai-uma-an%C3%A1lise-detalhada" class="link-item">Satya Nadella e Sundar Pichai</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/bill-gates-g%C3%AAnio-vision%C3%A1rio-ou-pol%C3%AAmico-uma-jornada-de-sucesso-e-desafios" class="link-item">Bill Gates: Gênio ou Polêmico?</a>
+        
+        <div class="sub-category">Hardware & Inovação</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-paix%C3%A3o-por-dados-e-hardware" class="link-item">Paixão por Dados e Hardware</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/internet-das-coisas" class="link-item">Internet das Coisas (IoT)</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/ind%C3%BAstria-4-0-transformando-a-manufatura-com-tecnologia-avan%C3%A7ada" class="link-item">Indústria 4.0</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/blockchain-e-criptomoedas-desvendando-o-futuro-financeiro" class="link-item">Blockchain e Criptomoedas</a>
+        
+        <div class="sub-category">Games & Nostalgia</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-revolu%C3%A7%C3%A3o-do-futebol-nos-games-da-nostalgia-do-playstation-1-ao-realismo-das-novas-gera%C3%A7%C3%B5es" class="link-item">Futebol nos Games: Do PS1 ao Hoje</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/consoles-em-2024-novidades-tend%C3%AAncias-e-futuro" class="link-item">Consoles em 2024</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/quem-se-lembra-era-de-ouro-do-orkut-e-msn-celebra%C3%A7%C3%A3o-dos-20-anos" class="link-item">Nostalgia: Orkut e MSN</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-lista-de-filmes-dos-trapalh%C3%B5es-uma-an%C3%A1lise-curiosa-e-descontra%C3%ADda-1-1" class="link-item">Filmes dos Trapalhões</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/filmes-para-curtir-o-halloween-com-quem-voc%C3%AA-gosta-cl%C3%A1ssicos-e-assustadores" class="link-item">Filmes de Halloween</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-graduation-cap"></i> Concursos, Carreira & Português</button>
+    <div class="panel">
+        <div class="sub-category">Carreira & Soft Skills</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/remunera%C3%A7%C3%A3o-e-empregabilidade-em-2024" class="link-item">Empregabilidade e Salários 2024</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/4-certificados-gratuitos-indispens%C3%A1veis-para-sua-recoloca%C3%A7%C3%A3o-profissional" class="link-item">4 Certificados Gratuitos Indispensáveis</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/domine-a-arte-da-orat%C3%B3ria-desvende-os-segredos-da-comunica%C3%A7%C3%A3o-eficaz" class="link-item">Domine a Oratória</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/domine-a-arte-das-rela%C3%A7%C3%B5es-interpessoais-desvende-os-segredos-da-conex%C3%A3o-humana" class="link-item">Relações Interpessoais</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/qualidade-de-vida-no-trabalho-um-conceito-multidimensional" class="link-item">Qualidade de Vida no Trabalho</a>
+        
+        <div class="sub-category">Concursos & Direito</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/s%C3%A9rie-de-posts-para-blog-sobre-os-artigos-37-a-42-da-constitui%C3%A7%C3%A3o-federal-de-1988" class="link-item">Constituição: Artigos 37 a 42</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/mapa-mental-da-lei-8-112-90-desvendando-os-fundamentos-para-servidores" class="link-item">Lei 8.112/90 (Mapa Mental)</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/direitos-trabalhistas-o-que-todo-trabalhador-precisa-saber" class="link-item">Direitos Trabalhistas</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/resenha-do-qconcursos-uma-plataforma-completa-para-concursos-p%C3%BAblicos" class="link-item">Resenha QConcursos</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/resenha-do-aprovado-app-a-ferramenta-completa-para-estudantes" class="link-item">Resenha App Aprovado</a>
+        
+        <div class="sub-category">Português para Concursos</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/domine-a-concord%C3%A2ncia-nominal-e-verbal-um-guia-pr%C3%A1tico-para-turbinar-sua-escrita-na-%C3%A1rea-policial" class="link-item">Concordância Nominal e Verbal</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/desvendando-as-ora%C3%A7%C3%B5es-subordinadas-um-guia-completo-para-dominar-a-linguagem-mapa-mental" class="link-item">Orações Subordinadas</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/desvendando-as-ora%C3%A7%C3%B5es-coordenadas-um-guia-completo" class="link-item">Orações Coordenadas</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/crase-o-que-%C3%A9-e-como-usar-mapa-mental" class="link-item">Crase + Mapa Mental</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/coloca%C3%A7%C3%A3o-pronominal-regras-b%C3%A1sicas" class="link-item">Colocação Pronominal</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-book-open"></i> Educação, Matemática & Acadêmico</button>
+    <div class="panel">
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-matem%C3%A1tica-no-esporte-uma-abordagem-l%C3%BAdica-motivadora-estrat%C3%A9gica-e-individualizada" class="link-item">Matemática no Esporte</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/as-maiores-sumidades-do-esporte-os-dados-matem%C3%A1ticos" class="link-item">Sumidades do Esporte & Dados Matemáticos</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/forma%C3%A7%C3%A3o-t%C3%A1tica-e-o-ensino-da-matem%C3%A1tica" class="link-item">Formação Tática e Ensino da Matemática</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/fra%C3%A7%C3%B5es-de-c%C3%A9dula-monet%C3%A1ria-uma-forma-divertida-de-alavancar-os-estudos" class="link-item">Frações com Cédulas Monetárias</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/tech-for-everyone-por-que-esse-deve-ser-o-seu-primeiro-passo-no-sololearn-e-o-caminho-para-seu-futu" class="link-item">Sololearn: Tech for Everyone</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/domine-o-python-do-zero-ao-hero-com-o-sololearn-a-jornada-completa" class="link-item">Sololearn: Python do Zero ao Hero</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/mestrados-em-tecnologia-matem%C3%A1tica-e-finan%C3%A7as-em-pa%C3%ADses-da-am%C3%A9rica-do-norte-e-europa" class="link-item">Mestrados no Exterior (EUA/Europa)</a>
+    </div>
+
+    <button class="accordion"><i class="fas fa-globe-americas"></i> Sociedade & Variedades</button>
+    <div class="panel">
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/bullying-desvendando-suas-ra%C3%ADzes-e-enfrentando-o-problema" class="link-item">Bullying: Raízes e Soluções</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/preconceito-racial-uma-reflex%C3%A3o-necess%C3%A1ria" class="link-item">Preconceito Racial: Reflexão</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/meio-ambiente-em-perigo-conscientiza%C3%A7%C3%A3o-e-a%C3%A7%C3%A3o-urgente" class="link-item">Meio Ambiente em Perigo</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-diversidade-na-sociedade-brasileira-respeitando-o-conceito-familiar" class="link-item">Diversidade na Sociedade Brasileira</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/comparativo-entre-brasil-e-indon%C3%A9sia-panorama-geral" class="link-item">Brasil vs Indonésia: Panorama</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/crise-econ%C3%B4mica-no-brasil-uma-reflex%C3%A3o-sobre-nossos-percursos-hist%C3%B3ricos" class="link-item">Crise Econômica: Reflexão Histórica</a>
+    </div>
+
+    <button class="accordion" style="border-left: 5px solid #ffd700;"><i class="fas fa-users" style="color: #ffd700;"></i> Parceiros & Colunistas</button>
+    <div class="panel">
+        <div class="sub-category" style="color: #ffd700;">Gabrielle Dantas</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/psicologia-da-educa%C3%A7%C3%A3o" class="link-item">Psicologia da Educação</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/inova%C3%A7%C3%A3o-educacional-nas-escolas" class="link-item">Inovação Educacional</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/o-que-%C3%A9-traje-esporte-fino" class="link-item">Moda: Traje Esporte Fino</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/pe%C3%A7as-que-nunca-saem-de-moda" class="link-item">Moda: Peças Atemporais</a>
+
+        <div class="sub-category" style="color: #ffd700;">Janilson</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/conectando-o-futuro-como-a-iot-est%C3%A1-revolucionando-ind%C3%BAstrias" class="link-item">IoT: Revolucionando Indústrias</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-import%C3%A2ncia-da-seguran%C3%A7a-de-dados" class="link-item">Segurança de Dados</a>
+
+        <div class="sub-category" style="color: #ffd700;">Marilia</div>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/a-casa-do-drag%C3%A3o-o-uso-do-audiovisual-para-a-educa%C3%A7%C3%A3o-sobre-hist%C3%B3ria" class="link-item">A Casa do Dragão & História</a>
+        <a href="https://jfnegociospro.wixsite.com/consultoria/post/educomunica%C3%A7%C3%A3o-como-a-tecnologia-e-a-arte-transformam-a-educa%C3%A7%C3%A3o" class="link-item">Educomunicação</a>
+    </div>
+
+    <footer>
+        © 2025 Jefferson Firmino - JF Negócios Pro<br>
+        171 Artigos Catalogados
+    </footer>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            // Fecha os outros acordeões ao abrir um
+            for (var j = 0; j < acc.length; j++) {
+                if (acc[j] !== this) {
+                    acc[j].classList.remove("active");
+                    acc[j].nextElementSibling.style.maxHeight = null;
+                }
+            }
+
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
+</script>
+
+</body>
+</html>
